@@ -5,6 +5,15 @@
 @section('content')
 <!-- Main Content -->
 
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+            <div>
+                <p class="text-sm text-slate-500">Akses cepat ke pengelolaan data admin.</p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+                <a href="{{ route('admin.events.index') }}" class="inline-block px-6 py-3 bg-indigo-600 text-white rounded-2xl font-bold shadow-lg shadow-indigo-100 hover:bg-indigo-700 active:scale-95 transition">Kelola Event</a>
+                <a href="{{ route('admin.partners.index') }}" class="inline-block px-6 py-3 bg-slate-900 text-white rounded-2xl font-bold shadow-lg shadow-slate-200 hover:bg-slate-800 active:scale-95 transition">Kelola Partner</a>
+            </div>
+        </div>
 
         <!-- Stats Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">

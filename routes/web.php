@@ -5,7 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EventController as EventAdminController;
-
+use App\Http\Controllers\PartnerController;
 
 
 // Rute User Area
@@ -21,4 +21,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/', [DashboardController::class,'index'])->name('dashboard');
     Route::get('/transactions', [DashboardController::class,'indexTransaction'])->name('transactions.index');
     // dan seterusnya...
+
+    Route::resource('partners', PartnerController::class);
 });

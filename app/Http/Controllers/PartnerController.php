@@ -5,13 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Partner;
 
+
 class PartnerController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $partners = Partner::latest()->paginate(10);
+    $search = $request->search;
+    $partners = Partner::where('name', 'LIKE', "%$search%")
+                    ->paginate(5)
+                    ->withQueryString();
 
-        return view('admin.partners.index', compact('partners'));
+    return view('admin.partners.index', compact('partners'))->with('search', $search);
     }
 
     public function create()

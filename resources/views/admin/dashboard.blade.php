@@ -11,6 +11,7 @@
             </div>
             <div class="flex flex-wrap gap-3">
                 <a href="{{ route('admin.events.index') }}" class="inline-block px-6 py-3 bg-indigo-600 text-white rounded-2xl font-bold shadow-lg shadow-indigo-100 hover:bg-indigo-700 active:scale-95 transition">Kelola Event</a>
+                <a href="{{ route('admin.categories.index') }}" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-2xl font-bold shadow-lg shadow-blue-100 hover:bg-blue-700 active:scale-95 transition">Kelola Kategori</a>
                 <a href="{{ route('admin.partners.index') }}" class="inline-block px-6 py-3 bg-slate-900 text-white rounded-2xl font-bold shadow-lg shadow-slate-200 hover:bg-slate-800 active:scale-95 transition">Kelola Partner</a>
             </div>
         </div>

@@ -21,7 +21,6 @@
 </head>
 
 <body class="bg-slate-50 text-slate-900">
-
     <!-- Navigation -->
     <nav
         class="glass sticky top-8 z-40 mx-4 mt-4 px-6 py-4 rounded-2xl border border-white/20 shadow-lg flex justify-between items-center">
@@ -42,9 +41,7 @@
                 class="px-5 py-2.5 bg-indigo-600 text-white rounded-xl font-semibold shadow-lg shadow-indigo-200 hover:bg-indigo-700 transition">Daftar</button>
         </div> -->
     </nav>
-
     @yield('content')
-
     <!-- Footer -->
     <footer class="bg-indigo-900 text-indigo-100 py-20 px-6 mt-20">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-12">
@@ -71,7 +68,6 @@
                 <ul class="space-y-4">
                     <li><a href="/?category=seminar-it" class="hover:text-white transition">Seminar</a></li>
                     <li><a href="/?category=entertaiment" class="hover:text-white transition">Entertaiment</a></li>
-                    <li><a href="/?category=seminar" class="hover:text-white transition">Seminar</a></li>
                     <li><a href="/?category=kompetisi" class="hover:text-white transition">Kompetisi</a></li>
                     <li><a href="/?category=hiburan" class="hover:text-white transition">hiburan</a></li>
                 </ul>

@@ -4,7 +4,17 @@
 @section('page_subtitle', 'Buat, edit, atau hapus partner dengan mudah.')
 
 @section('content')
-<div class="mb-4 text-right">
+<div class="mb-4 flex justify-between items-center">
+    <form action="{{ route('admin.partners.index') }}" method="GET">
+        <input
+            type="text"
+            name="search"
+            placeholder="Cari partner..."
+            value="{{ request('search') }}"
+            class="px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        >
+    </form>
+
     <a href="{{ route('admin.partners.create') }}" class="inline-block px-6 py-3 bg-slate-900 text-white rounded-2xl font-bold shadow-lg shadow-slate-200 hover:bg-slate-800 active:scale-95 transition">
         + Tambah Partner Baru
     </a>
@@ -58,5 +68,6 @@
     <div class="px-8 py-6 bg-slate-50/50 border-t items-center">
         {{ $partners->links() }}
     </div>
+    
 </div>
 @endsection

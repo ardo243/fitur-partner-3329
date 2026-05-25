@@ -1,7 +1,5 @@
 @extends('layouts.app')
-
 @section('content')
-
    <!-- Hero Section -->
     <section class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12">
         <div class="flex-1 space-y-8">
@@ -35,7 +33,6 @@
             </div>
             <img src="assets/concert.png" alt="Concert"
                 class="rounded-[2rem] shadow-2xl relative z-10 w-full object-cover aspect-[4/5] object-center">
-
             <div class="absolute -bottom-6 -left-6 glass p-6 rounded-2xl shadow-xl z-20 border border-white">
                 <div class="flex items-center gap-4">
                     <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
@@ -52,7 +49,6 @@
             </div>
         </div>
     </section>
-
     <!-- Events Grid -->
     <section id="events" class="max-w-7xl mx-auto px-6 py-20">
              <!-- Blok Navigasi Filter Kategori -->
@@ -81,7 +77,7 @@
                 <h3 class="text-xl font-bold mb-2 group-hover:text-indigo-600 transition">{{ $event->title }}</h3>
                 <div class="flex items-center gap-2 text-slate-500 text-sm mb-4">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                     <span>{{ \Carbon\Carbon::parse($event->date)->format('d-m-Y H:i') }}</span>
@@ -94,9 +90,32 @@
             </div>
         </div>
         @endforeach
-
         </div>
-    </section>
-
-
+        </section>
+        <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-14">
+            <h2 class="text-4xl font-black text-slate-800">
+                Partner Kami
+            </h2>
+            <p class="text-slate-500 mt-3">
+                Platform ini didukung oleh berbagai partner terpercaya.
+            </p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            @foreach($partners as $partner)
+                <div class="bg-slate-50 rounded-3xl p-6 flex flex-col items-center hover:shadow-lg transition">
+                    <img
+                        src="{{ $partner->logo_url }}"
+                        alt="{{ $partner->name }}"
+                        class="h-20 object-contain mb-4"
+                    >
+                    <p class="font-bold text-slate-700 text-center">
+                        {{ $partner->name }}
+                    </p>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
 @endsection
